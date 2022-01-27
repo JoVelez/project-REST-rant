@@ -9,7 +9,6 @@ function show (data) {
               <h1>NAME</h1>
               <h1>RATE</h1>
               <h1>DESC</h1>
-                
                     <a href={`./${data.id}/edit`} className="btn btn-warning">
                         Edit
                     </a>
