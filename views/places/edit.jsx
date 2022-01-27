@@ -27,7 +27,7 @@ function edit_form (data) {
                     <label htmlFor="cuisine">Cuisine</label>
                     <input className="form-control" id="name" name="name" value={data.place.cuisine} required /> 
                 </div>
-  ...
+  ...<input className='btn btn-primary' type="submit" value='Add a Place'/>
 </form>
           </main>
         </Def>
