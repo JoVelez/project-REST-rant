@@ -3,9 +3,11 @@ const React = require('react')
 const Def = require('../default')
 
 function show (data) {
-    let comments = (<h3 className="inactive">
-        No comments yet!
-    </h3>
+    console.log(data)
+    let comments= (
+        <h3 className="inactive">
+            no comments yet
+        </h3>
     )
     if (data.place.comments.length) {
         comments = data.place.comments.map(c => {
@@ -39,8 +41,22 @@ function show (data) {
                     </h4>
                 </div>
                 <div>
-                    <h2>Comments</h2>
-                    {comments}
+                <h4>Give us your opinion!</h4>
+                <form action={`/places/${data.place.id}/comment`} method='POST'>
+                            <label htmlFor="author">Author</label>
+                            <input id="author" name="author"/>
+
+                            <label htmlFor="content">Content</label>
+                            <textarea name="content" id="content"></textarea>
+                           
+                            <label htmlFor="stars">Rating</label>
+                            <input type="range" step="0.5" min="1" max="5" id="stars" name="stars" />
+                        
+                            <label htmlFor="rant">Rant?</label>
+                            <input type="checkbox" id="rant" name="rant"/>
+
+                    <input type="submit" className="btn btn-primary" value="Add Comment" />
+                </form>
                 </div>
                     <a href={`./${data.id}/edit`} className="btn btn-warning">
                         Edit
